@@ -41,14 +41,14 @@ public class ListActivity extends AppCompatActivity {
             gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-/*                    Person person = people[position];
+                    Person person = people[position];
 
-                    final Intent intent = new Intent(MainActivity.this.getApplicationContext(), ListActivity.class);
+                    final Intent intent = new Intent(ListActivity.this.getApplicationContext(), DigitalSelfActivity.class);
 
-                    ListActivity.userSelected = person;
-                    ListActivity.indexUserSelected = position;
+                    DigitalSelfActivity.personSelected = userSelected;
+                    DigitalSelfActivity.digitalSelfSelected = person;
 
-                    startActivity(intent);*/
+                    startActivity(intent);
 
                 }
             });
