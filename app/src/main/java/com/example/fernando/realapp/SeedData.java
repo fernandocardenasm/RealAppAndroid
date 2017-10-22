@@ -23,7 +23,7 @@ public class SeedData {
         person2.imageProfile = "person2_p";
         person2.imageSelf = "person2_s";
         person2.imageFriend = "person2_f";
-        person1.listFriends.addAll(Arrays.asList("1"));
+        person2.listFriends.addAll(Arrays.asList("1"));
 
         Person person3 = new Person();
         person3.userId = "3";
@@ -31,7 +31,7 @@ public class SeedData {
         person3.imageProfile = "person3_p";
         person3.imageSelf = "person3_s";
         person3.imageFriend = "person3_f";
-        person1.listFriends.addAll(Arrays.asList(""));
+        person3.listFriends.addAll(Arrays.asList(""));
 
         Person[] people = {person1, person2, person3};
 

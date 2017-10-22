@@ -1,6 +1,7 @@
 package com.example.fernando.realapp;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ public class PeopleAdapter extends BaseAdapter {
 
     private final Context mContext;
     private final Person[] people;
+    public Person userSelected;
 
     public PeopleAdapter(Context mContext, Person[] people) {
         this.mContext = mContext;
@@ -58,6 +60,12 @@ public class PeopleAdapter extends BaseAdapter {
 
         int resID = mContext.getResources().getIdentifier(person.imageProfile, "drawable", mContext.getPackageName());
         imageView.setImageResource(resID);
+
+        if (userSelected != null) {
+            if (userSelected.listFriends.contains(person.userId)) {
+                nameTextView.setBackgroundColor(Color.YELLOW);
+            }
+        }
 
         nameTextView.setText(person.userName);
 //        authorTextView.setText(mContext.getString(book.getAuthor()));

@@ -18,9 +18,15 @@ public class DigitalSelfActivity extends AppCompatActivity {
 
         if (personSelected != null && digitalSelfSelected != null) {
 
-            images = new String[2];
-            images[0] = digitalSelfSelected.imageSelf;
-            images[1] = digitalSelfSelected.imageFriend;
+            if (isAFriend()){
+                images = new String[2];
+                images[0] = digitalSelfSelected.imageFriend;
+                images[1] = digitalSelfSelected.imageSelf;
+            }
+            else {
+                images = new String[1];
+                images[0] = digitalSelfSelected.imageSelf;
+            }
 
             GridView gridView = (GridView)findViewById(R.id.gridviewDigital);
             DigitalSelfAdapter imagesAdapter = new DigitalSelfAdapter(this, images);
@@ -28,4 +34,9 @@ public class DigitalSelfActivity extends AppCompatActivity {
 
         }
     }
+
+    public boolean isAFriend(){
+        return personSelected.listFriends.contains(digitalSelfSelected.userId);
+    }
+
 }

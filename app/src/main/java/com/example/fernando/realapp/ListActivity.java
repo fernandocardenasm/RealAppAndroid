@@ -36,6 +36,7 @@ public class ListActivity extends AppCompatActivity {
 
             GridView gridView = (GridView)findViewById(R.id.gridviewList);
             PeopleAdapter peopleAdapter = new PeopleAdapter(this, people);
+            peopleAdapter.userSelected = userSelected;
             gridView.setAdapter(peopleAdapter);
 
             gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
