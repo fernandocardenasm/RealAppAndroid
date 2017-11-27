@@ -6,10 +6,15 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -71,6 +76,40 @@ public class ListActivity extends AppCompatActivity {
 
 
         }
+    }
+
+    final GestureDetector gestureDetector = new GestureDetector(new GestureDetector.SimpleOnGestureListener() {
+        public void onLongPress(MotionEvent e) {
+            // The code for when a long-press happens
+            if (logs != null){
+                Log.v("Press", "It was pressed------------");
+
+                //FireBase
+
+                // Write a message to the database
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                String idKey = database.getReference().push().getKey();
+                DatabaseReference myRef = database.getReference(idKey);
+
+                String str = "Android----Final User: " + userSelected.userName + " ";
+                str = str + Helpers.getStringLogs(getApplicationContext(), logs);
+                myRef.setValue(str);
+
+                CharSequence text = "Your message was sent!";
+                int duration = Toast.LENGTH_SHORT;
+
+                Toast toast = Toast.makeText(getApplicationContext(), text, duration);
+                toast.show();
+
+
+            }
+        }
+    });
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        gestureDetector.onTouchEvent(event);
+        return super.dispatchTouchEvent(event);
     }
 
     @Override

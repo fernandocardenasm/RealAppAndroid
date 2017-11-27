@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "267612477817",
+    "firebase_url": "https://realapp-a730e.firebaseio.com",
+    "project_id": "realapp-a730e",
+    "storage_bucket": "realapp-a730e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:267612477817:android:d73fb90f55003759",
+        "android_client_info": {
+          "package_name": "com.example.fernando.realapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "267612477817-bce9lj1g0egla01d79btv4arbih7l9a1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fernando.realapp",
+            "certificate_hash": "62be24e4dcf50c658dde4f3daf5fae4a3fe00669"
+          }
+        },
+        {
+          "client_id": "267612477817-bkdmuipu9fnq90pmogph41p7io465o23.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrRlyBSyW_6Q_MPoAvFnl6kvNOHzzitoc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "267612477817-bkdmuipu9fnq90pmogph41p7io465o23.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

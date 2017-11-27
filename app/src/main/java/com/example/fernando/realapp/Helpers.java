@@ -43,9 +43,20 @@ public class Helpers {
     public static void printLogs(Context context, ArrayList<LogData> logs) {
         for (int i = 0; i < logs.size(); i++) {
             LogData log = logs.get(i);
-            Log.v("Log", "Date: " + log.date);
+            Log.v("Log", "Date: " + log.date + "String Data: " + log.stringData);
             Log.v("Log2", "String: " + log.stringData);
         }
+    }
+
+    public static String getStringLogs(Context context, ArrayList<LogData> logs) {
+        String str = "";
+        for (int i = 0; i < logs.size(); i++) {
+            LogData log = logs.get(i);
+
+            str = str + "Date: " + log.date + ";String Data: " + log.stringData + " ";
+        }
+
+        return str;
     }
 
     public static String getCurrentDateTime(){
