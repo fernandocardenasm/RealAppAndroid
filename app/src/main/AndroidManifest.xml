@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ListActivity" />
-        <activity android:name=".DigitalSelfActivity"></activity>
+        <activity android:name=".DigitalSelfActivity" />
+        <activity android:name=".ImageDetailActivity"></activity>
     </application>
 
 </manifest>
