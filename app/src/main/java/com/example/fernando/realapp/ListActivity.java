@@ -36,22 +36,32 @@ public class ListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-
+        setTitle("I would like to see more from:");
 
         peopleAux = SeedData.seedData();
-        people = new Person[peopleAux.length - 1];
+
 
         if (userSelected != null) {
 
             int cont = 0;
 
-            for (int i = 0; i < peopleAux.length; i++) {
+            if (userSelected.listFriends.contains("")){
+                people = new Person[peopleAux.length];
 
-                if (i != indexUserSelected) {
-                    people[cont] = peopleAux[i];
-                    cont++;
+                people = peopleAux;
+            }
+            else{
+                people = new Person[peopleAux.length - 1];
+
+                for (int i = 0; i < peopleAux.length; i++) {
+
+                    if (i != indexUserSelected) {
+                        people[cont] = peopleAux[i];
+                        cont++;
+                    }
                 }
             }
+
 
             GridView gridView = (GridView)findViewById(R.id.gridviewList);
             PeopleAdapter peopleAdapter = new PeopleAdapter(this, people);

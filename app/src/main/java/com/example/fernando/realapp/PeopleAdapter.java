@@ -65,9 +65,17 @@ public class PeopleAdapter extends BaseAdapter {
             if (userSelected.listFriends.contains(person.userId)) {
                 nameTextView.setBackgroundColor(Color.YELLOW);
             }
+
+            if (userSelected.userId.equals(person.userId)) {
+                nameTextView.setText("Show them yourself ;)");
+                nameTextView.setBackgroundColor(Color.GREEN);
+            }
+            else {
+                nameTextView.setText(person.userName);
+            }
         }
 
-        nameTextView.setText(person.userName);
+
 //        authorTextView.setText(mContext.getString(book.getAuthor()));
 //        imageViewFavorite.setImageResource(book.getIsFavorite() ? R.drawable.star_enabled : R.drawable.star_disabled);
 

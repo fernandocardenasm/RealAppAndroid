@@ -10,6 +10,7 @@ import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -24,15 +25,21 @@ public class DigitalSelfActivity extends AppCompatActivity {
 
     public ImageButton imageButtonStranger;
     public ImageButton imageButtonFriend;
+    public TextView textViewDigital;
+    public TextView textViewFriend;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_digital_self);
 
+        setTitle("See more from:");
+
         imageButtonStranger = (ImageButton) findViewById(R.id.imageButtonStranger);
         imageButtonFriend = (ImageButton) findViewById(R.id.imageButtonFriend);
 
+        textViewDigital = (TextView) findViewById(R.id.textViewDigital);
+        textViewFriend = (TextView) findViewById(R.id.textViewFriend);
 
         if (personSelected != null && digitalSelfSelected != null) {
 
@@ -50,17 +57,35 @@ public class DigitalSelfActivity extends AppCompatActivity {
                         final Intent intent = new Intent(DigitalSelfActivity.this.getApplicationContext(), ImageDetailActivity.class);
 
                         intent.putExtra("image", images[1]);
+                        intent.putExtra("type", "imageFriend");
+                        intent.putExtra("user", personSelected.userName);
+                        intent.putExtra("other", digitalSelfSelected.userName);
                         startActivity(intent);
                     }
                 });
             }
-            else {
+            else if (personSelected.userId == digitalSelfSelected.userId){
+
+                images = new String[1];
+                images[0] = digitalSelfSelected.imageFriend;
+                setTitle("Show them my");
+                textViewDigital.setText("Personal Updates");
+
+                imageButtonFriend.setEnabled(false);
+                imageButtonFriend.setVisibility(View.INVISIBLE);
+
+                textViewFriend.setEnabled(false);
+                textViewFriend.setVisibility(View.INVISIBLE);
+
+            } else {
                 images = new String[1];
                 images[0] = digitalSelfSelected.imageSelf;
 
                 imageButtonFriend.setEnabled(false);
                 imageButtonFriend.setVisibility(View.INVISIBLE);
 
+                textViewFriend.setEnabled(false);
+                textViewFriend.setVisibility(View.INVISIBLE);
             }
 
             int resIDS = getResources().getIdentifier(images[0], "drawable", getPackageName());
@@ -73,6 +98,9 @@ public class DigitalSelfActivity extends AppCompatActivity {
                     final Intent intent = new Intent(DigitalSelfActivity.this.getApplicationContext(), ImageDetailActivity.class);
 
                     intent.putExtra("image", images[0]);
+                    intent.putExtra("type", "imageStranger");
+                    intent.putExtra("user", personSelected.userName);
+                    intent.putExtra("other", digitalSelfSelected.userName);
                     startActivity(intent);
                 }
             });

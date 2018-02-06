@@ -23,7 +23,7 @@
         android:id="@+id/textview_book_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="12sp"
+        android:textSize="18sp"
         tools:text="Are You My Mother"
         android:textStyle="bold"
         android:paddingTop="4dp"

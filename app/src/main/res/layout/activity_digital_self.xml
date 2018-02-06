@@ -7,21 +7,64 @@
     tools:context="com.example.fernando.realapp.DigitalSelfActivity">
 
     <android.support.v7.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-    <ImageButton
-        android:id="@+id/imageButtonStranger"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:scaleType="fitXY"/>
 
-    <ImageButton
-        android:id="@+id/imageButtonFriend"
-        android:layout_marginStart="20dp"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:scaleType="fitXY"/>
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/imageButtonStranger"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:scaleType="fitXY"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewDigital"
+            android:textSize="18sp"
+            android:text="Digital Self"
+            tools:text="Are You My Mother"
+            android:textStyle="bold"
+            android:paddingTop="4dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:gravity="center_horizontal"/>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/imageButtonFriend"
+                android:layout_marginStart="20dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:scaleType="fitXY"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewFriend"
+                android:layout_marginStart="20dp"
+                android:textSize="18sp"
+                tools:text="Are You My Mother"
+                android:text="Personal Updates"
+                android:textStyle="bold"
+                android:paddingTop="4dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:gravity="center_horizontal"/>
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
 
     </android.support.v7.widget.LinearLayoutCompat>
 

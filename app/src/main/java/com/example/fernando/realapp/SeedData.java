@@ -22,7 +22,7 @@ public class SeedData {
         person2.userName = "Razan";
         person2.imageProfile = "razan_p";
         person2.imageSelf = "razan_s";
-        person2.imageFriend = "razan_s";
+        person2.imageFriend = "razan_f";
         person2.listFriends.addAll(Arrays.asList(""));
 
         Person person3 = new Person();
