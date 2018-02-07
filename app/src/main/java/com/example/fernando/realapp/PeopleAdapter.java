@@ -61,6 +61,8 @@ public class PeopleAdapter extends BaseAdapter {
         int resID = mContext.getResources().getIdentifier(person.imageProfile, "drawable", mContext.getPackageName());
         imageView.setImageResource(resID);
 
+        nameTextView.setText(person.userName);
+
         if (userSelected != null) {
             if (userSelected.listFriends.contains(person.userId)) {
                 nameTextView.setBackgroundColor(Color.YELLOW);
