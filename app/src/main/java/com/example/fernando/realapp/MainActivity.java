@@ -1,6 +1,8 @@
 package com.example.fernando.realapp;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -39,14 +41,38 @@ public class MainActivity extends AppCompatActivity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Person person = people[position];
+                final Person person = people[position];
+                final int personPos = position;
 
-                final Intent intent = new Intent(MainActivity.this.getApplicationContext(), ListActivity.class);
+                // 1. Instantiate an AlertDialog.Builder with its constructor
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 
-                ListActivity.userSelected = person;
-                ListActivity.indexUserSelected = position;
+// 2. Chain together various setter methods to set the dialog characteristics
+                builder.setMessage("It is recommended that you select only yourself.")
+                        .setTitle("Are you " + person.userName + "?");
 
-                startActivity(intent);
+
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User clicked OK button
+                        final Intent intent = new Intent(MainActivity.this.getApplicationContext(), ListActivity.class);
+
+                        ListActivity.userSelected = person;
+                        ListActivity.indexUserSelected = personPos;
+
+                        startActivity(intent);
+                    }
+                });
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User cancelled the dialog
+                    }
+                });
+
+// 3. Get the AlertDialog from create()
+                AlertDialog dialog = builder.create();
+
+                dialog.show();
 
             }
         });

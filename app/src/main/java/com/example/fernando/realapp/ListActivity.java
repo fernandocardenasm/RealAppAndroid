@@ -45,7 +45,11 @@ public class ListActivity extends AppCompatActivity {
 
             int cont = 0;
 
-            if (userSelected.listFriends.contains("")){
+            people = new Person[peopleAux.length];
+
+            people = peopleAux;
+
+            /*if (userSelected.listFriends.contains("")){
                 people = new Person[peopleAux.length];
 
                 people = peopleAux;
@@ -60,7 +64,7 @@ public class ListActivity extends AppCompatActivity {
                         cont++;
                     }
                 }
-            }
+            }*/
 
 
             GridView gridView = (GridView)findViewById(R.id.gridviewList);

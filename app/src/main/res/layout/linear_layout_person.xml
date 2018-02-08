@@ -14,7 +14,7 @@
             android:id="@+id/imageview_cover_art"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:scaleType="centerCrop"/>
+            android:scaleType="fitStart"/>
 
 
     </FrameLayout>
@@ -23,7 +23,7 @@
         android:id="@+id/textview_book_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
+        android:textSize="14sp"
         tools:text="Are You My Mother"
         android:textStyle="bold"
         android:paddingTop="4dp"
